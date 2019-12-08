@@ -1,0 +1,30 @@
+﻿@model ParentsPortal.Models.Payment
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <h2> Payment Details</h2>
+
+<div>
+    <h4>Payment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentCourse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentCourse.Semester)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SemesterFee)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SemesterFee)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PaymentId">Edit Payment</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

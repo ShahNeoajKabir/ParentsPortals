@@ -1,0 +1,42 @@
+﻿@model ParentsPortal.Models.StudentCourse
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <h2>StudentCourse Details </h2>
+
+<div>
+    <h4>StudentCourse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentInfo)
+        </dt>
+        <dd>
+            <span>Student Id :</span>  @Html.DisplayFor(model => model.StudentInfo.StudentId)
+        </dd>
+        <dd>
+            <span>Student Name :</span>  @Html.DisplayFor(model => model.StudentInfo.StudentName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Course)
+        </dt>
+        <dd>
+            <span>Course Id :</span>  @Html.DisplayFor(model => model.Course.CourseId)
+        </dd>
+        <dd>
+            <span>Course Name :</span>  @Html.DisplayFor(model => model.Course.CourseName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+        <dd>
+         <span>Semester :</span>   @Html.DisplayFor(model => model.Semester)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.StudentCourseId">Edit StudentCourse</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,33 @@
+﻿@model ParentsPortal.Models.Payment
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete Payment</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Payment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentCourse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentCourse.Semester)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SemesterFee)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SemesterFee)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PaymentId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

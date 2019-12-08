@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ParentsPortal.Models.Notice>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Notice Board</h2>
+
+<p>
+    <a asp-action="Create">Create Notice</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Notices)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notices)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NoticeId">Edit Notice</a> |
+                <a asp-action="Details" asp-route-id="@item.NoticeId"> Notice Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NoticeId">Delete Notice</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

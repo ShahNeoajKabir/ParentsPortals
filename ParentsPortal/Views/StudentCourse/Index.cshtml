@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ParentsPortal.Models.StudentCourse>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <h2>StudentCourse</h2>
+
+<p>
+    <a asp-action="Create">Create StudentCourse</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Course)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Semester)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentInfo.StudentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.CourseId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semester)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StudentCourseId">Edit StudentCourse</a> |
+                <a asp-action="Details" asp-route-id="@item.StudentCourseId">StudentCourse Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StudentCourseId">Delete StudentCourse</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
